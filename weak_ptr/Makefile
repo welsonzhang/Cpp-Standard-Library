@@ -1,12 +1,8 @@
-.PHONY:all
-all:weak_ptr1
-sharedptr1: weak_ptr1.cpp
-	g++ weak_ptr1.cpp -o weak_ptr1 -std=c++11 -Wl,--no-as-needed
-#sharedptr2: sharedptr2.cpp
-#	g++ sharedptr2.cpp -o sharedptr2 -std=c++11
-#sharedptr3: sharedptr3.cpp
-#	g++ sharedptr3.cpp -o sharedptr3 -std=c++11 -lrt 
+all:weakptr1 weakptr2
 
-.PHONY:clean
+weakptr1:weakptr1.cpp
+	g++  weakptr1.cpp -o weakptr1 -std=c++11
+weakptr2:weakptr2.cpp
+	g++ weakptr2.cpp -o weakptr2 -std=c++11
 clean:
-	rm -rf sharedptr1 sharedptr2 sharedptr3
+	rm -rf weakptr1 weakptr2
