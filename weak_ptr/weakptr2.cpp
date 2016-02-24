@@ -43,5 +43,17 @@ int main()
 
     p = initFamily("jim");
     cout << "jim's family exists" << endl;
+
+    try{
+     shared_ptr<string> sp(new string("hi"));  //create shared pointer
+     weak_ptr<string> wp=sp;     //create weak pointer out of it
+     sp.reset();              //release object of shared pointer
+     cout<<wp.use_count()<<endl;   //prints:0
+     cout<<boolalpha<<wp.expired()<<endl;  // print:true
+     shared_ptr<string> p(wp); //throws std::bad_weak_ptr
+    }
+    catch(const std::exception& e){
+     cerr<<"exception: "<<e.what()<<endl;
+    }
 }
 

@@ -7,8 +7,8 @@ using namespace std;
 class Person {
   public:
     string name;
-    shared_ptr<Person > mother;
-    shared_ptr<Person > father;
+    shared_ptr<Person> mother;
+    shared_ptr<Person> father;
     vector<shared_ptr<Person>> kids;
 
     Person (const string& n,
